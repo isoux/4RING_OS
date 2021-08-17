@@ -1,6 +1,6 @@
 SECTIONS
 {
-  . = 0x7E5000;
+  . = 0x1E5000;
   .dev_txt		: { *(.text) }
   .dev_rodata	: { *(.rodata) }
   .dev_data		: { *(.data) }

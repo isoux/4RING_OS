@@ -30,5 +30,5 @@ BOOT_PATH := $(ISO_PATH)/boot
 GRUB_PATH := $(BOOT_PATH)/grub
 
 # GRUB or GRUB2 : One of these must be defined!
-export BOOT_WAY = GRUB
+export BOOT_WAY = GRUB2
 

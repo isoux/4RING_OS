@@ -2,7 +2,7 @@ OUTPUT_FORMAT(elf32-i386)
 
 SECTIONS
 {
-  . = 0x7EE000;  
+  . = 0x1EE000;  
   .core_text : { *(.text) }
   .core_rodata : { *(.rodata) }
   .core_data : {*(.data)}

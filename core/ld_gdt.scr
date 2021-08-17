@@ -1,6 +1,6 @@
 SECTIONS
 {
-  . = 0x7F7000; /* 8M - 36K */
+  . = 0x1F7000; /* 8M - 36K */
   .gdt_data : { *(.gdt_data) }
  
 }

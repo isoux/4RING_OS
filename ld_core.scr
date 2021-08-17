@@ -4,20 +4,20 @@ ENTRY(init_32)
 SECTIONS
 {
 /* { core/core.o} */
-	. = 0x7EE000;  
+	. = 0x1EE000;  
 	.core_text		: { *(.text) }
 	.core_rodata	: { *(.rodata) }
 	.core_data		: { *(.data)}
 	.core_bss		: { *(.bss) *(COMMON) }
   
 /* { devs/devs.o } */
-	. = 0x7E5000;
+	. = 0x1E5000;
 	.dev_txt	(NOLOAD) : { *(.text) }
 	.dev_rodata (NOLOAD) : { *(.rodata) }
 	.dev_data	(NOLOAD) : { *(.data) }
 	.dev_bss	(NOLOAD) : { *(.bss) *(COMMON)}
   
 /* { core/gdt_mem.o } */
-	. = 0x7F7000;
+	. = 0x1F7000;
 	.gdt_data	(NOLOAD) : { *(.gdt_data) } 
 }  

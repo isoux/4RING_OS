@@ -27,122 +27,122 @@ Name             Origin             Length             Attributes
 
 Linker script and memory map
 
-                0x00000000007e5000                . = 0x7e5000
+                0x00000000001e5000                . = 0x1e5000
 
-.dev_txt        0x00000000007e5000     0x1fd6
+.dev_txt        0x00000000001e5000     0x1fd6
  *(.text)
- .text          0x00000000007e5000      0x283 keyboard.o
-                0x00000000007e5000                put_queue
-                0x00000000007e5030                do_key
-                0x00000000007e50b0                ctrl
-                0x00000000007e50c0                none
-                0x00000000007e50d0                lshift
-                0x00000000007e50e0                rshift
-                0x00000000007e50f0                alt
-                0x00000000007e5100                caps
-                0x00000000007e5110                func
-                0x00000000007e5120                curs
-                0x00000000007e5130                unctrl
-                0x00000000007e5140                unlshift
-                0x00000000007e5150                unrshift
-                0x00000000007e5160                unalt
-                0x00000000007e5170                uncaps
-                0x00000000007e5180                num
-                0x00000000007e5190                scroll
-                0x00000000007e51a0                halt
-                0x00000000007e51b0                keyboard
-                0x00000000007e5230                get_key_int
-                0x00000000007e5270                Keyb_int
- *fill*         0x00000000007e5283        0xd 
- .text          0x00000000007e5290      0x417 tty.o
-                0x00000000007e5290                prepare
-                0x00000000007e5680                tty_interrupt
- *fill*         0x00000000007e56a7        0x9 
- .text          0x00000000007e56b0       0xf5 devs_task.o
-                0x00000000007e56b0                set_devs_tasks
-                0x00000000007e5710                set_devs_tss_desc
-                0x00000000007e5720                set_devs_desc
-                0x00000000007e5780                Devs_init
- *fill*         0x00000000007e57a5        0xb 
- .text          0x00000000007e57b0      0x10d devs_sched.o
-                0x00000000007e57b0                devs_sched_task
-                0x00000000007e5860                save_irq
- *fill*         0x00000000007e58bd        0x3 
- .text          0x00000000007e58c0       0x51 devs_irq.o
-                0x00000000007e58c0                devs_irq_task
- *fill*         0x00000000007e5911        0xf 
- .text          0x00000000007e5920     0x16b6 console.o
-                0x00000000007e5920                csi_m
-                0x00000000007e59b0                write_con
-                0x00000000007e6ab0                con_init
+ .text          0x00000000001e5000      0x283 keyboard.o
+                0x00000000001e5000                put_queue
+                0x00000000001e5030                do_key
+                0x00000000001e50b0                ctrl
+                0x00000000001e50c0                none
+                0x00000000001e50d0                lshift
+                0x00000000001e50e0                rshift
+                0x00000000001e50f0                alt
+                0x00000000001e5100                caps
+                0x00000000001e5110                func
+                0x00000000001e5120                curs
+                0x00000000001e5130                unctrl
+                0x00000000001e5140                unlshift
+                0x00000000001e5150                unrshift
+                0x00000000001e5160                unalt
+                0x00000000001e5170                uncaps
+                0x00000000001e5180                num
+                0x00000000001e5190                scroll
+                0x00000000001e51a0                halt
+                0x00000000001e51b0                keyboard
+                0x00000000001e5230                get_key_int
+                0x00000000001e5270                Keyb_int
+ *fill*         0x00000000001e5283        0xd 
+ .text          0x00000000001e5290      0x417 tty.o
+                0x00000000001e5290                prepare
+                0x00000000001e5680                tty_interrupt
+ *fill*         0x00000000001e56a7        0x9 
+ .text          0x00000000001e56b0       0xf5 devs_task.o
+                0x00000000001e56b0                set_devs_tasks
+                0x00000000001e5710                set_devs_tss_desc
+                0x00000000001e5720                set_devs_desc
+                0x00000000001e5780                Devs_init
+ *fill*         0x00000000001e57a5        0xb 
+ .text          0x00000000001e57b0      0x10d devs_sched.o
+                0x00000000001e57b0                devs_sched_task
+                0x00000000001e5860                save_irq
+ *fill*         0x00000000001e58bd        0x3 
+ .text          0x00000000001e58c0       0x51 devs_irq.o
+                0x00000000001e58c0                devs_irq_task
+ *fill*         0x00000000001e5911        0xf 
+ .text          0x00000000001e5920     0x16b6 console.o
+                0x00000000001e5920                csi_m
+                0x00000000001e59b0                write_con
+                0x00000000001e6ab0                con_init
 
-.iplt           0x00000000007e6fd6        0x0
- .iplt          0x00000000007e6fd6        0x0 keyboard.o
+.iplt           0x00000000001e6fd6        0x0
+ .iplt          0x00000000001e6fd6        0x0 keyboard.o
 
-.dev_rodata     0x00000000007e6fd8      0x220
+.dev_rodata     0x00000000001e6fd8      0x220
  *(.rodata)
- .rodata        0x00000000007e6fd8       0xc3 keyboard.o
-                0x00000000007e6fd8                key_map
-                0x00000000007e7039                shift_map
- *fill*         0x00000000007e709b        0x1 
- .rodata        0x00000000007e709c      0x15c console.o
+ .rodata        0x00000000001e6fd8       0xc3 keyboard.o
+                0x00000000001e6fd8                key_map
+                0x00000000001e7039                shift_map
+ *fill*         0x00000000001e709b        0x1 
+ .rodata        0x00000000001e709c      0x15c console.o
 
-.rel.dyn        0x00000000007e71f8        0x0
- .rel.got       0x00000000007e71f8        0x0 keyboard.o
- .rel.iplt      0x00000000007e71f8        0x0 keyboard.o
- .rel.text      0x00000000007e71f8        0x0 keyboard.o
- .rel.data      0x00000000007e71f8        0x0 keyboard.o
+.rel.dyn        0x00000000001e71f8        0x0
+ .rel.got       0x00000000001e71f8        0x0 keyboard.o
+ .rel.iplt      0x00000000001e71f8        0x0 keyboard.o
+ .rel.text      0x00000000001e71f8        0x0 keyboard.o
+ .rel.data      0x00000000001e71f8        0x0 keyboard.o
 
-.dev_data       0x00000000007e71f8     0x1180
+.dev_data       0x00000000001e71f8     0x1180
  *(.data)
- .data          0x00000000007e71f8      0x400 keyboard.o
-                0x00000000007e71f8                key_tbl
- .data          0x00000000007e75f8      0xc5c tty.o
-                0x00000000007e75f8                tty_tbl
-                0x00000000007e824c                tty_tbl_list
- *fill*         0x00000000007e8254        0x4 
- .data          0x00000000007e8258      0x100 devs_task.o
-                0x00000000007e8258                ldt_irq
-                0x00000000007e8268                ldt_sched
-                0x00000000007e8278                tss_devs_irq
-                0x00000000007e82e0                tss_devs_sched
-                0x00000000007e8348                p_stack_irq
-                0x00000000007e834c                p_stack_irq_krn
-                0x00000000007e8350                p_stack_sched
-                0x00000000007e8354                p_stack_sched_krn
- .data          0x00000000007e8358        0x8 devs_irq.o
-                0x00000000007e8358                dev_int_ftbl
- .data          0x00000000007e8360       0x18 console.o
-                0x00000000007e8360                attr
+ .data          0x00000000001e71f8      0x400 keyboard.o
+                0x00000000001e71f8                key_tbl
+ .data          0x00000000001e75f8      0xc5c tty.o
+                0x00000000001e75f8                tty_tbl
+                0x00000000001e824c                tty_tbl_list
+ *fill*         0x00000000001e8254        0x4 
+ .data          0x00000000001e8258      0x100 devs_task.o
+                0x00000000001e8258                ldt_irq
+                0x00000000001e8268                ldt_sched
+                0x00000000001e8278                tss_devs_irq
+                0x00000000001e82e0                tss_devs_sched
+                0x00000000001e8348                p_stack_irq
+                0x00000000001e834c                p_stack_irq_krn
+                0x00000000001e8350                p_stack_sched
+                0x00000000001e8354                p_stack_sched_krn
+ .data          0x00000000001e8358        0x8 devs_irq.o
+                0x00000000001e8358                dev_int_ftbl
+ .data          0x00000000001e8360       0x18 console.o
+                0x00000000001e8360                attr
 
-.got            0x00000000007e8378        0x0
- .got           0x00000000007e8378        0x0 keyboard.o
+.got            0x00000000001e8378        0x0
+ .got           0x00000000001e8378        0x0 keyboard.o
 
-.got.plt        0x00000000007e8378        0x0
- .got.plt       0x00000000007e8378        0x0 keyboard.o
+.got.plt        0x00000000001e8378        0x0
+ .got.plt       0x00000000001e8378        0x0 keyboard.o
 
-.igot.plt       0x00000000007e8378        0x0
- .igot.plt      0x00000000007e8378        0x0 keyboard.o
+.igot.plt       0x00000000001e8378        0x0
+ .igot.plt      0x00000000001e8378        0x0 keyboard.o
 
-.dev_bss        0x00000000007e8378      0x804
+.dev_bss        0x00000000001e8378      0x804
  *(.bss)
- .bss           0x00000000007e8378        0x4 keyboard.o
-                0x00000000007e8378                is_none
- .bss           0x00000000007e837c      0x388 devs_sched.o
-                0x00000000007e837c                indx
-                0x00000000007e8380                dev_sched_tbl
- .bss           0x00000000007e8704       0x64 console.o
+ .bss           0x00000000001e8378        0x4 keyboard.o
+                0x00000000001e8378                is_none
+ .bss           0x00000000001e837c      0x388 devs_sched.o
+                0x00000000001e837c                indx
+                0x00000000001e8380                dev_sched_tbl
+ .bss           0x00000000001e8704       0x64 console.o
  *(COMMON)
- COMMON         0x00000000007e8768        0x3 keyboard.o
-                0x00000000007e8768                e0
-                0x00000000007e8769                leds
-                0x00000000007e876a                mode
- *fill*         0x00000000007e876b        0x1 
- COMMON         0x00000000007e876c      0x410 devs_task.o
-                0x00000000007e876c                stack_tss_irq_core
-                0x00000000007e886c                stack_tss_irq
-                0x00000000007e8974                stack_tss_sched
-                0x00000000007e8a7c                stack_tss_sched_core
+ COMMON         0x00000000001e8768        0x3 keyboard.o
+                0x00000000001e8768                e0
+                0x00000000001e8769                leds
+                0x00000000001e876a                mode
+ *fill*         0x00000000001e876b        0x1 
+ COMMON         0x00000000001e876c      0x410 devs_task.o
+                0x00000000001e876c                stack_tss_irq_core
+                0x00000000001e886c                stack_tss_irq
+                0x00000000001e8974                stack_tss_sched
+                0x00000000001e8a7c                stack_tss_sched_core
 LOAD keyboard.o
 LOAD tty.o
 LOAD devs_task.o
