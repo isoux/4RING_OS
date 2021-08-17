@@ -7,7 +7,7 @@
 
 CC = clang
 LD = ld -m elf_i386
-ARCH = i486
+ARCH = i386
 CPP	= clang -E -nostdinc -I ../include
 
 CP := cp
@@ -30,5 +30,5 @@ BOOT_PATH := $(ISO_PATH)/boot
 GRUB_PATH := $(BOOT_PATH)/grub
 
 # GRUB or GRUB2 : One of these must be defined!
-export BOOT_WAY = GRUB3
+export BOOT_WAY = GRUB
 

@@ -110,14 +110,9 @@ __inline_ static u_int reverse_val(void){
   }
 #if (MARCH == i386)
   __asm{
-  	xor ebx,ebx
-  	mov bx, ax
-  	ror bx, 8
-  	ror ebx, 16
-  	ror eax, 16
-  	ror ax, 8
-  	mov bx, ax
-  	mov eax,ebx
+	ror ax, 8
+	ror eax, 16
+	ror ax, 8
     }
 #else
   __asm{bswap eax}
