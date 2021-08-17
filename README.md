@@ -6,7 +6,7 @@ Hobby operating system for Intel processors from 386 and up. Engaged on all 4 ri
 - [Basic Idea and assumptions](https://www.isoux.org/blog/index.php?article4/basic-idea-and-assumptions)
 - [Development and tools](https://www.isoux.org/blog/index.php?article5/development-and-tools)
 
-## Release i386 0.0.0
+## [Release i386 0.0.0.](https://www.isoux.org/blog/index.php?article7/rel-i386_000)
 
 <p style="text-align: justify;">Nothing spectacular for the zero release.</p>
 <p style="text-align: justify;">What can be noticed is that the characters are printed on the monitor when the keyboard is pressed until the buffer is full. What is actually happening on the system is a "complex" int&#1077;raction between rings 1 and 0 for now, which can be seen in the code.</p>
