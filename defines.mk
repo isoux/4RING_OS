@@ -8,7 +8,7 @@
 CC = clang
 LD = ld -m elf_i386
 ARCH = i386
-CPP	= clang -E -nostdinc -I ../include
+CPP	= $(CC) -E -nostdinc -I ../include
 
 CP := cp
 RM := rm -rf
@@ -19,11 +19,13 @@ GDT = core/gdt_mem.bin
 GDT_RAM = gdt_
 DEVS_RAM = devs
 CORE_RAM = core
+USRS_RAM = usrs
 SYS = 4ring_os
 IMG_FILES = img/*
 CFG = boot/grub.cfg
 DEVS = sys_out/devs
 CORE = sys_out/core
+USRS = sys_out/users
 IMG_PATH := img
 ISO_PATH := iso
 BOOT_PATH := $(ISO_PATH)/boot

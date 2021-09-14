@@ -1,6 +1,6 @@
 SECTIONS
 {
-  . = 0x7D3000;
+  . = 0x1D3000;
   .user_txt		: { *(.text) }
   .user_rodata	: { *(.rodata) }
   .user_data		: { *(.data) }

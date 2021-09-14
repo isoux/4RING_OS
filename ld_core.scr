@@ -16,6 +16,15 @@ SECTIONS
 	.dev_rodata (NOLOAD) : { *(.rodata) }
 	.dev_data	(NOLOAD) : { *(.data) }
 	.dev_bss	(NOLOAD) : { *(.bss) *(COMMON)}
+	
+/* { users/users.o } */
+	. = 0x1D3000;
+	.user_txt		(NOLOAD) : { *(.text) }
+	.user_rodata	(NOLOAD) : { *(.rodata) }
+	.user_data		(NOLOAD) : { *(.data) }
+	.user_bss		(NOLOAD) : { *(.bss) *(COMMON) }
+
+
   
 /* { core/gdt_mem.o } */
 	. = 0x1F7000;

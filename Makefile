@@ -23,7 +23,7 @@ endif
 .c.o:
 	$(CC) $(CFLAGS) -nostdinc -Iinclude -c -o $*.o $<
 	
-SYS_OBJS = init/init.o init/main.o core/core.o devs/devs.o core/gdt_mem.o
+SYS_OBJS = init/init.o init/main.o core/core.o devs/devs.o users/users.o core/gdt_mem.o
 
 all: Image 
 
@@ -50,6 +50,7 @@ make_iso: sys_out/sys_load.o
 	$(CP) $(GDT) $(BOOT_PATH)/$(GDT_RAM)
 	$(CP) $(DEVS) $(BOOT_PATH)/$(DEVS_RAM)
 	$(CP) $(CORE) $(BOOT_PATH)/$(CORE_RAM)
+	$(CP) $(USRS) $(BOOT_PATH)/$(USRS_RAM)
 	grub-file --is-x86-multiboot $(BOOT_PATH)/$(SYS)
 	grub-mkrescue --compress=no -o $(SYS).iso $(ISO_PATH)
 	
@@ -62,6 +63,7 @@ make_img:
 	$(CP) $(GDT) $(IMG_PATH)/$(GDT_RAM)
 	$(CP) $(DEVS) $(IMG_PATH)/$(DEVS_RAM)
 	$(CP) $(CORE) $(IMG_PATH)/$(CORE_RAM)
+	$(CP) $(USRS) $(IMG_PATH)/$(USRS_RAM)
 
 boot/load.o:
 	(cd boot; make)
@@ -78,8 +80,8 @@ devs/devs.o:
 #libs/libs.o:
 	#(cd libs; make)
 	
-#users/users.o:
-	#(cd users; make)
+users/users.o:
+	(cd users; make)
 	
 qemu_iso_grub2:
 	#qemu-system-x86_64 -m 9M -cdrom 4ring_os.iso -machine pc-0.13
@@ -107,6 +109,7 @@ clean_all_objs:
 	(cd core; make clean)
 	(cd devs; make clean)
 	(cd init; make clean)
+	(cd users; make clean)
 	(make clean)
 	
 dep:
