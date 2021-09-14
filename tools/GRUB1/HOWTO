@@ -5,6 +5,6 @@
  1. Uncompress grub1.img.tar.xz
  2. Write (raw, with dd cmd on UNIX) grub1.img on floppy or USB stick.
  3. Mount floppy or USB stick media on computer.
- 4. From img/ folder copy files ( 4ring_os, core, devs, gdt_ ) to mounted media into boot/ folder.
+ 4. From img/ folder copy files ( 4ring_os, core, devs, usrs, gdt_ ) to mounted media into boot/ folder.
 
  Now the media is prepared for booting on real machine or emulators.
