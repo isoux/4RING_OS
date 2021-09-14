@@ -39,23 +39,27 @@ extern long long gdt[];
 #define RING3_CODE	0x38	// Ring 3 code decs
 #define RING3_DATA	0x40	// Ring 3 data decs
 
-#define TSS_CORE_SEL 0x48
-#define LDT_CORE_SEL 0x50
+/* Reserved */
+/*
+#define X 0x48
+#define X 0x50
+*/
 
+/* RING 1 TASKS */
 #define TSS_DEVS_IRQ 0x58
 #define LDT_DEVS_IRQ 0x60
 #define TSS_DEVS_SCHED 0x68
 #define LDT_DEVS_SCHED 0x70
-
+/* RING 2 TASKS */
 #define TSS_LIBS_IRQ 0x78
 #define LDT_LIBS_IRQ 0x80
 #define TSS_LIBS_SCHED 0x88
 #define LDT_LIBS_SCHED 0x90
-
-#define TSS_USERS_IRQ 0x98
-#define LDT_USERS_IRQ 0xA0
-#define TSS_USERS_SCHED 0xA8
-#define LDT_USERS_SCHED 0xB0
+/* RING 3 TASKS */
+#define TSS_MAIN_TASK 0x98
+#define LDT_MAIN_TASK 0xA0
+#define TSS_USERS_IRQ 0xA8
+#define LDT_USERS_IRQ 0xB0
 
 /* Reserved */
 /*
@@ -88,4 +92,3 @@ extern long long gdt[];
 #define TSS_BUSY(selector) ((TSS_GDT(selector)->type))
 
 #endif /* _GDT_H */
-
