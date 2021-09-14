@@ -14,7 +14,7 @@
 #define PAGE_SIZE 4096
 
 extern long long gdt[];
-extern long tss_core, ldt_core;
+extern long tss_users, ldt_core;
 
 extern void set_task_stacks(void);
 extern void setup_idt(void);
@@ -57,12 +57,12 @@ __naked void  setup_descriptors(void) {
   __asm{
 	//mov ebx, CORE_BASE
 	mov ecx, [p_gdt]
-	lea eax, tss_core
-	mov edi, TSS_CORE_SEL
+	lea eax, tss_users
+	mov edi, TSS_MAIN_TASK
 	call set_tss_desc
 
 	lea eax, ldt_core
-	mov edi, LDT_CORE_SEL
+	mov edi, LDT_MAIN_TASK
 	call set_tss_desc
 
 	lea eax, sc_sched_req

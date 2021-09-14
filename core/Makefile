@@ -18,7 +18,7 @@ c.o:
 	$(CC) $(CFLAGS) -O \
 	-o $*.o $<
 	
-OBJS = gdt.o idt.o tasks.o timer.o interrupts.o core_sched.o
+OBJS = gdt.o idt.o timer.o interrupts.o core_sched.o # tasks.o
 	
 core.o: $(OBJS)
 	$(LD) -r -o core.o $(OBJS)
