@@ -1,0 +1,9 @@
+SECTIONS
+{
+  . = 0x7D3000;
+  .user_txt		: { *(.text) }
+  .user_rodata	: { *(.rodata) }
+  .user_data		: { *(.data) }
+  .user_bss		: { *(.bss) *(COMMON) }
+/* .comment	: { *(.comment) } */
+}

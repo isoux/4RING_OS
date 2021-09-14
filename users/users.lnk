@@ -1,0 +1,82 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+stack_tss_users     0x110             main_task.o
+stack_tss_users_libs
+                    0x110             main_task.o
+stack_tss_users_devs
+                    0x110             main_task.o
+stack_tss_users_krn
+                    0x110             main_task.o
+
+Discarded input sections
+
+ .llvm_addrsig  0x0000000000000000        0xa main_task.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+                0x00000000007d3000                . = 0x7d3000
+
+.user_txt       0x00000000007d3000       0x4d
+ *(.text)
+ .text          0x00000000007d3000       0x4d main_task.o
+                0x00000000007d3000                set_task_stacks
+                0x00000000007d3040                main_task
+
+.iplt           0x00000000007d304d        0x0
+ .iplt          0x00000000007d304d        0x0 main_task.o
+
+.rel.dyn        0x00000000007d3050        0x0
+ .rel.got       0x00000000007d3050        0x0 main_task.o
+ .rel.iplt      0x00000000007d3050        0x0 main_task.o
+ .rel.data      0x00000000007d3050        0x0 main_task.o
+
+.user_rodata
+ *(.rodata)
+
+.user_data      0x00000000007d3050       0x88
+ *(.data)
+ .data          0x00000000007d3050       0x88 main_task.o
+                0x00000000007d3050                ldt_core
+                0x00000000007d3060                p_stack_core
+                0x00000000007d3064                p_stack_core_krn
+                0x00000000007d3068                p_stack_core_devs
+                0x00000000007d306c                p_stack_core_libs
+                0x00000000007d3070                tss_users
+
+.got            0x00000000007d30d8        0x0
+ .got           0x00000000007d30d8        0x0 main_task.o
+
+.got.plt        0x00000000007d30d8        0x0
+ .got.plt       0x00000000007d30d8        0x0 main_task.o
+
+.igot.plt       0x00000000007d30d8        0x0
+ .igot.plt      0x00000000007d30d8        0x0 main_task.o
+
+.user_bss       0x00000000007d30d8      0x444
+ *(.bss)
+ .bss           0x00000000007d30d8        0x4 main_task.o
+                0x00000000007d30d8                cur_task
+ *(COMMON)
+ COMMON         0x00000000007d30dc      0x440 main_task.o
+                0x00000000007d30dc                stack_tss_users
+                0x00000000007d31ec                stack_tss_users_libs
+                0x00000000007d32fc                stack_tss_users_devs
+                0x00000000007d340c                stack_tss_users_krn
+LOAD main_task.o
+OUTPUT(users.o elf32-i386)
+
+.comment        0x0000000000000000       0x1f
+ .comment       0x0000000000000000       0x1f main_task.o
+                                         0x20 (size before relaxing)
+
+.note.GNU-stack
+                0x0000000000000000        0x0
+ .note.GNU-stack
+                0x0000000000000000        0x0 main_task.o
