@@ -69,7 +69,7 @@ int main(void) {
  */
 __naked void enter_main_core_task(void) {
 __asm{
-   ljmp TSS_CORE_SEL, 0 // core_task at tasks.c
+   ljmp TSS_MAIN_TASK, 0 // core_task at tasks.c
   }
 }
 
