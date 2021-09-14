@@ -110,9 +110,9 @@ __inline_ static u_int reverse_val(void){
   }
 #if (MARCH == i386)
   __asm{
-	ror ax, 8
-	ror eax, 16
-	ror ax, 8
+  	ror ax, 8
+  	ror eax, 16
+  	ror ax, 8
     }
 #else
   __asm{bswap eax}
@@ -149,7 +149,7 @@ void load_mods(u_int info_struc) {
 		  case 'libs':
 		  	out_addr = LIBS_START;
 		  	break;
-		  case 'user':
+		  case 'usrs':
 		  	out_addr = USERS_START;
 		  	break;
 		  default:
